@@ -50,6 +50,30 @@ int main() {
             
         case 2: //operation 2
         
+    printf("Enter Message\n");//Message for Encription/Decription
+    scanf("%s", message);
+    printf("Enter key\n");//Rotation key
+    scanf("%d", &key);
+        
+        
+        for(i = 0;message[i]!= '\0';i++) {
+            character = message[i];
+            
+        if(character >= 'A' && character <= 'Z') {
+            character = character - key;
+        }
+        
+        else if(character <'A') {
+            
+            character = character + 'Z' - 'A' + 1;
+        }
+         
+            message[i] = character;  
+            
+    }
+        
+    printf("Decrypted Message: %s", message);
+        
             break;
             
         case 3: //operation 3
@@ -74,6 +98,7 @@ int main() {
     
     
    
+    
     
     
     
