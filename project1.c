@@ -1,9 +1,10 @@
-#inculde <stdio.h>
+#include <stdio.h>
 
 int main() {
     char alphabet[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}; 
     char message[100];
-    int key;
+    char character;
+    int key, i;
     int operation;
     
     
@@ -23,9 +24,27 @@ int main() {
         
         
     printf("Enter Message\n");//Message for Encription/Decription
-    gets(message);
+    scanf("%s", message);
     printf("Enter key\n");//Rotation key
     scanf("%d", &key);
+    
+    
+        for(i = 0; message[i]!='\0';++i) {
+            character = message[i];
+		
+		if(character >= 'A' && character <= 'Z'){
+			character = character + key;
+		}
+			else if(character > 'Z') {
+			    
+				character = character - 'Z' + 'A' - 1;
+			}
+			
+			message[i] = character;
+        }
+    printf("Encrypted Message:%s", message);
+    
+    
         
             break;
             
