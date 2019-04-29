@@ -292,29 +292,34 @@ void rotKeylessDecryption(char *msg)
     int counter = 0;
     int i = 0;
     
-    for(i = 0;msg[i]!= '\0'; i++) 
+    while(counter <= 26)
     {
-        char c = msg[i];
-        
-        while(counter < 27) 
-        {    
-            if(c >= 'A' && c <= 'Z') 
-            {
-                c = c - counter ;
-            }
-            
-            if(c <'A') 
-            {
-                c = c + 'Z' - 'A' + 1;
-            }
-            
-            msg[i] = c;  
-            
-            counter++;
-        }
-    }  
     
-    printf("Decrypted Message: %s\n", msg); 
+        for(i = 0;msg[i]!= '\0'; i++) 
+        {
+            char c = msg[i];
+        
+       
+            
+                if(c >= 'A' && c <= 'Z') 
+                {
+                    c = c - counter ;
+                }
+            
+                if(c <'A') 
+                {
+                    c = c + 'Z' - 'A' + 1;
+                }
+            
+                msg[i] = c;  
+            
+                
+                printf("Decrypted Message: %s\n", msg); 
+        }  
+        
+    counter++;
+    }
+
 }   
 
 
